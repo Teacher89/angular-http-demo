@@ -1,0 +1,21 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:0-16",
+    "waitFor": "onCreateCommand",
+    "updateContentCommand": "npm install",
+    "postCreateCommand": "",
+    "postAttachCommand": {
+      "server": "npm start"
+    },
+    "customizations": {
+      "codespaces": {
+        "openFiles": [ "README.md" ]
+      }
+    },
+    "portsAttributes": {
+      "4200": {
+        "label": "Angular App",
+        "onAutoForward": "openPreview"
+      }
+    },
+    "forwardPorts": [4200]
+}
