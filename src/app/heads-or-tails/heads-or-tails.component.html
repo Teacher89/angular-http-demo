@@ -1,0 +1,18 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+    <div>
+        <label for="coinHead">Орел:</label>
+        <input type="radio" id="coinHead" name="playerCoin" value="0" ngModel required #playerCoin="ngModel"/>
+        <label for="coinTail">Решка:</label>
+        <input type="radio" id="coinTail" name="playerCoin" value="1" ngModel required #playerCoin="ngModel"/>
+    </div>
+    <button>Submit</button>
+</form>
+
+<div *ngIf="computerCoin !== null">
+    <p>Ваш прогноз: 
+        <span *ngIf="playerCoin.value === '0'">Орел</span>
+        <span *ngIf="playerCoin.value === '1'">Решка</span>
+    </p>
+    <p>Результат броска: {{ computerCoin === 0 ? "Орел" : "Решка" }}</p>
+    <p>Результат броска: {{ computerCoin === (+playerCoin.value) ? "Вы угадали" : "Вы проиграли" }}</p>
+</div>

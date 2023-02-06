@@ -1,0 +1,22 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+    <div>
+        <label for="start">Начало диапазона:</label>
+        <input type="text" name="sequenceMin" ngModel required #sequenceMin="ngModel"/>
+    </div>
+
+    <div>
+        <label for="finish">Конец диапазона:</label>
+        <input type="text" name="sequenceMax" ngModel required #sequenceMax="ngModel"/>
+    </div>
+
+    <div>
+        <label for="amount">Количество чисел:</label>
+        <input type="text" name="sequenceLength"  ngModel required #sequenceLength="ngModel"/>
+    </div>
+    <button>Submit</button>
+</form>
+
+<div *ngIf="sequence.length > 0">
+    <p>Random Sequence of {{ sequenceLength.value }} elements from {{ sequenceMin.value }} to {{ sequenceMax.value }}</p>
+    <p>{{ sequence.join(', ')}}</p>
+</div>

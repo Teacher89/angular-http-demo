@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule }   from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RandomSequenceComponent } from './random-sequence/random-sequence.component';
+import { HeadsOrTailsComponent } from './heads-or-tails/heads-or-tails.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RandomSequenceComponent,
+    HeadsOrTailsComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
